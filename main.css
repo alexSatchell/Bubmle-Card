@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+html, body {
+    width: 100vw;
+    height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #565656;
+    font-family: 'Roboto', sans-serif;
+    /* placing a border is useful for setting up grids */
+
+}
+
+/* Quick Notes
+    - Create a container and set the display to flex, the below properties will center our card on the page
+*/
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F1BD98;
+}
+
+/* this will be the actual card */
+#card {
+    display: grid;
+    grid-template-rows: 300px 150px;
+    grid-template-columns: 150px 150px;
+    border-radius: 20px;
+-webkit-box-shadow: 0px 0px 16px 8px rgba(0,0,0,0.19);
+-moz-box-shadow: 0px 0px 16px 8px rgba(0,0,0,0.19);
+box-shadow: 0px 0px 16px 8px rgba(0,0,0,0.19);
+    
+}
+
+#banner {
+    grid-row: 1;
+    grid-column: 1 / 3;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: grid;
+    grid-template-rows: 225px 25px 50px;
+    grid-template-columns: 150px 150px;
+}
+
+#avatar {
+    grid-row: 1 / 4;
+    grid-column: 1/ 3;
+    background-color: #FFF4EC;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#stats {
+grid-row: 2 / 4;
+grid-column: 1 / 3;
+display: grid;
+grid-template-rows: 50px 25px;
+grid-template-columns: 150px 150px;
+}
+
+#info {
+    grid-row: 1 / 3;
+    grid-template-columns: 1;
+    background-color: #E7CFBC;
+    border-top-right-radius: 20px;
+    padding: 5px;
+    -webkit-box-shadow: 8px 2px 16px 8px rgba(0,0,0,0.07);
+    -moz-box-shadow: 8px 2px 16px 8px rgba(0,0,0,0.07);
+    box-shadow: 8px 2px 16px 8px rgba(0,0,0,0.07);
+}
+
+#name, #age{
+    font-size: 1.8em;
+    margin: 2px;
+}
+
+#career {
+    margin: 2px;
+    font-size: 1.2em;
+}
+
+#like-button {
+    grid-row: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2em;
+}
+
+/* adding a drop shadow to the icon to give it depth effect */
+#like-button img {
+    width: 40px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222); 
+    cursor: pointer;
+    transition: .2s;
+}
+
+#like-button img:active {
+transform: scale(1.3);
+}
+
+input[type='checkbox']{
+    display: none;
+}
+
+
+#like {
+    grid-row: 2 / 3;
+    grid-column: 2;
+    background-color: #E7CFBC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#bio {
+    grid-row: 2;
+    grid-column: 1 / 3;
+    background-color: #E7CFBC;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 5px 1em 1em 1em ;
+}
+
+#bio-p {
+    font-size: 1.05em;
+}
+
+#facts {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fact {
+    margin:  0 .5em 0 .5em;
+    border-radius: 1em;
+    width: 120px;
+    height: 25px;
+    background-color: #F1BD98;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #222;
+    font-size: .7em;
+    transition: .2s all;
+}
+
+.fact img {
+    width: 15px;
+    margin-right: .3em;
+}
+
+.fact:first-child {
+    width: 45px;
+    font-size: .6em;
+}
+
+.fact:last-child {
+    width: 70px;
+    font-size: .65em;
+}
+
+.fact:hover {
+    background-color: #F4CFB4;
+    cursor: pointer;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
